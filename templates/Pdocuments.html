@@ -1,0 +1,76 @@
+<!-- documents.html -->
+
+<html>
+
+<head>
+<section>
+  <img class="mySlides" src="/static/pt.jpg"
+  style="height:60%" style="width:110%">
+  </section> 
+   <h1>Personality type using text analysis</h1>
+   <p>Find your personality type using this application that makes use of a text vectorizer to analyze posts by individuals identifying as different personality types. This app will yield your top 5 personalities from the 16 Myers Briggs personality types.</p>
+    <p>Kindly note that the script might take a few seconds to run as it parse through over 8 000 entries.
+</head>
+
+<form method="post" >
+    <input name="question_field" placeholder="enter search term here">
+    <input type="submit">
+</form>
+
+
+
+<body>
+<style>
+.mySlides{
+  width: 80%;
+  height: 75%
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;  
+}
+
+.divider{
+    width:5px;
+    height:1px;
+    display:inline-block;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+</style>
+  <h2>Relevant personality types displayed below</h2>
+<table>
+  <tr>
+    <th>Personality Type</th>
+    <th>SimiScore</th>
+    <th>Search Term</th>
+    <th>Rank</th>
+    <th>Introversion/Extraversion</th>
+    <th>Intuitive/Observant</th>
+    <th>Thinking/Feeling</th>
+    <th>Judging/Perceiving</th>
+    
+</tr>  
+{% for doc in docs %}
+<tr>
+<td>{{doc["Personality Type"]}}</td>
+<td>{{doc["Simiscore"]}}</td>
+<td>{{doc["Search Term"]}}</td>
+<td>{{doc["Rank"]}}</td>
+<td>{{doc["Introversion/Extraversion"]}}</td>
+<td>{{doc["Intuitive/Observant"]}}</td>
+<td>{{doc["Thinking/Feeling"]}}</td>
+<td>{{doc["Judging/Perceiving"]}}</td>
+
+</tr>
+{% endfor %}
+</table>
+
+
+</html>
