@@ -41,7 +41,7 @@ The first part - index.html file is easy. This is just some basic text that desc
   </section> 
    <h1>Personality type using text analysis</h1>
    <p>Find your personality type using this application that makes use of a text vectorizer to analyze posts by individuals identifying as different personality types. This app will yield your top 5 personalities from the 16 Myers Briggs personality types.</p>
-    <p>Kindly note that the script might take a few seconds to run as it parse through over 8 000 entries.
+   <p>Kindly note that the script might take a few seconds to run as it parse through over 8 000 entries.
 </head>
 
 ```
