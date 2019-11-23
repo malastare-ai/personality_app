@@ -1,7 +1,7 @@
 
 ![](https://media.giphy.com/media/8F9uH7lTO9AcAawBRu/giphy.gif)
 
-In this blog, I'll describe an application that helps users predict their own personality type on the **Myers Briggs spectrum** (of 16 personalities) using text analytics in python. The final application is hosted on PaaS - heroku. The application makes use of *flask* for app development and the *tfidvectorizer* from *sklearn* for text analytics.
+In this blog, I'll describe an application that helps users predict their own personality type on the **Myers Briggs spectrum** (of 16 personalities) using text analytics in python. The final app is hosted on PaaS - heroku. The application makes use of *flask* for app development and the *tfidvectorizer* from *sklearn* for text analytics.
 
 ### Data analysis and key question
 The data contains posts by reddit users corresponding to different personality types. The data can be accessed on [kaggle](https://www.kaggle.com/datasnaek/mbti-type). We'll create a personality finder application where a user can enter any set of words that best describes them. The app will output a **similarity score** of the user entered text with the various entries from the personality type data to predict the personality type (1 of 16 Myers Briggs personalities. It will also predict the likelihood of the four Myers Briggs characteristics such as:
