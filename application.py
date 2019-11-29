@@ -13,20 +13,20 @@ application= Flask(__name__)
 
 @application.route("/",methods=["GET","POST"])
 def homepage():
-#kbn 2018/12/12-Start- Call value from HTML form
+#Start- Call value from HTML form
   #data1=main()
   data1 = request.form.get('question1_field', 'Education')
   params = data1
   data.data1=data1
   #session['my_var']=data1
-#kbn 2018/12/12-End
+#End
   pd.set_option('display.max_rows', None)
   pd.set_option('display.max_columns', None)
   pd.options.mode.chained_assignment = None
   datasource1 = pd.read_csv("Personalities.csv")
   datasource1 = pd.DataFrame(datasource1)
 
-#kbn 2018/12/12-Start- Here divide inputs into multiple words and filter data using words to narrow sample size
+#Start- Here divide inputs into multiple words and filter data using words to narrow sample size
   words = data1.split()
 
   datasource2 = []
@@ -40,7 +40,7 @@ def homepage():
   datasource2=datasource2.drop_duplicates()
   datasource2=datasource2.reset_index()
   #print(datasource.head())
-#kbn 2018/12/12-End
+#End
   datasource=datasource2
   index_source = 0
   max_simi = 0
@@ -49,9 +49,9 @@ def homepage():
       documents = []
       documents.append(params)
       documents.append(datasource.loc[i, 'posts'])
-# kbn 2018/12/12-Start- add stop_words and ngram_range to the TfidVectorizer below
+#Start- add stop_words and ngram_range to the TfidVectorizer below
       tfidf = TfidfVectorizer(stop_words="english", ngram_range=(1, 4)).fit_transform(documents)
-# kbn 2018/12/12-End
+#End
       # no need to normalize, since Vectorizer will return normalized tf-idf
       pairwise_similarity = tfidf * tfidf.T
       # Add stop word, Add ngram
